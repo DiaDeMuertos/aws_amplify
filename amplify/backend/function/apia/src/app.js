@@ -96,7 +96,7 @@ app.get(path + '/:itemId', function(req, res) {
       res.statusCode = 500;
       res.json({ error: 'Could not load items: ' + err.message });
     } else {
-      res.json({ data: data.Items });
+      res.json({ data: data.Items.pop() });
     }
   });
 });

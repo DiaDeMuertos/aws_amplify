@@ -5,13 +5,13 @@
 		"env": {
 			"Type": "String"
 		},
-		"storageusersName": {
+		"storagepetsName": {
 			"Type": "String",
-			"Default": "storageusersName"
+			"Default": "storagepetsName"
 		},
-		"storageusersArn": {
+		"storagepetsArn": {
 			"Type": "String",
-			"Default": "storageusersArn"
+			"Default": "storagepetsArn"
 		}
 	},
 	"Conditions": {
@@ -36,12 +36,12 @@
 				"FunctionName": {
 					"Fn::If": [
 						"ShouldNotCreateEnvResources",
-						"apic",
+						"pets-function",
 						{
 							"Fn::Join": [
 								"",
 								[
-									"apic",
+									"pets-function",
 									"-",
 									{
 										"Ref": "env"
@@ -71,7 +71,7 @@
 				"Timeout": "25",
 				"Code": {
 					"S3Bucket": "amplify-awsamplifyenv-develop-84609-deployment",
-					"S3Key": "amplify-builds/apic-68477445496d32564151-build.zip"
+					"S3Key": "amplify-builds/pets-4b547530674b43625534-build.zip"
 				}
 			}
 		},
@@ -81,12 +81,12 @@
 				"RoleName": {
 					"Fn::If": [
 						"ShouldNotCreateEnvResources",
-						"awsamplifyenvLambdaRole1ee9acca",
+						"awsamplifyenvLambdaRoled29fb021",
 						{
 							"Fn::Join": [
 								"",
 								[
-									"awsamplifyenvLambdaRole1ee9acca",
+									"awsamplifyenvLambdaRoled29fb021",
 									"-",
 									{
 										"Ref": "env"
@@ -165,14 +165,14 @@
 							],
 							"Resource": [
 								{
-									"Ref": "storageusersArn"
+									"Ref": "storagepetsArn"
 								},
 								{
 									"Fn::Join": [
 										"/",
 										[
 											{
-												"Ref": "storageusersArn"
+												"Ref": "storagepetsArn"
 											},
 											"index/*"
 										]

@@ -1,105 +1,156 @@
 {
-  "auth": {
-    "awsamplifyenv8a48f11a": {
-      "service": "Cognito",
-      "providerPlugin": "awscloudformation",
-      "dependsOn": [],
-      "customAuth": false
-    }
-  },
-  "storage": {
-    "profile": {
-      "service": "DynamoDB",
-      "providerPlugin": "awscloudformation"
-    },
-    "items": {
-      "service": "DynamoDB",
-      "providerPlugin": "awscloudformation"
-    },
-    "users": {
-      "service": "DynamoDB",
-      "providerPlugin": "awscloudformation"
-    },
-    "tablea": {
-      "service": "DynamoDB",
-      "providerPlugin": "awscloudformation"
-    },
-    "tableb": {
-      "service": "DynamoDB",
-      "providerPlugin": "awscloudformation"
-    }
-  },
-  "function": {
-    "apia": {
-      "service": "Lambda",
-      "providerPlugin": "awscloudformation",
-      "build": true,
-      "dependsOn": [
-        {
-          "category": "storage",
-          "resourceName": "items",
-          "attributes": ["Name", "Arn"]
-        }
-      ]
-    },
-    "apib": {
-      "service": "Lambda",
-      "providerPlugin": "awscloudformation",
-      "build": true,
-      "dependsOn": [
-        {
-          "category": "storage",
-          "resourceName": "profile",
-          "attributes": ["Name", "Arn"]
-        }
-      ]
-    },
-    "apic": {
-      "service": "Lambda",
-      "providerPlugin": "awscloudformation",
-      "build": true,
-      "dependsOn": [
-        {
-          "category": "storage",
-          "resourceName": "users",
-          "attributes": ["Name", "Arn"]
-        }
-      ]
-    }
-  },
-  "api": {
-    "apia": {
-      "service": "API Gateway",
-      "providerPlugin": "awscloudformation",
-      "dependsOn": [
-        {
-          "category": "function",
-          "resourceName": "apia",
-          "attributes": ["Name", "Arn"]
-        }
-      ]
-    },
-    "apib": {
-      "service": "API Gateway",
-      "providerPlugin": "awscloudformation",
-      "dependsOn": [
-        {
-          "category": "function",
-          "resourceName": "apib",
-          "attributes": ["Name", "Arn"]
-        }
-      ]
-    },
-    "apic": {
-      "service": "API Gateway",
-      "providerPlugin": "awscloudformation",
-      "dependsOn": [
-        {
-          "category": "function",
-          "resourceName": "apic",
-          "attributes": ["Name", "Arn"]
-        }
-      ]
-    }
-  }
+	"auth": {
+		"awsamplifyenv8a48f11a": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [],
+			"customAuth": false
+		}
+	},
+	"storage": {
+		"profile": {
+			"service": "DynamoDB",
+			"providerPlugin": "awscloudformation"
+		},
+		"items": {
+			"service": "DynamoDB",
+			"providerPlugin": "awscloudformation"
+		},
+		"users": {
+			"service": "DynamoDB",
+			"providerPlugin": "awscloudformation"
+		},
+		"tablea": {
+			"service": "DynamoDB",
+			"providerPlugin": "awscloudformation"
+		},
+		"tableb": {
+			"service": "DynamoDB",
+			"providerPlugin": "awscloudformation"
+		},
+		"pets": {
+			"service": "DynamoDB",
+			"providerPlugin": "awscloudformation"
+		}
+	},
+	"function": {
+		"apia": {
+			"service": "Lambda",
+			"providerPlugin": "awscloudformation",
+			"build": true,
+			"dependsOn": [
+				{
+					"category": "storage",
+					"resourceName": "items",
+					"attributes": [
+						"Name",
+						"Arn"
+					]
+				}
+			]
+		},
+		"apib": {
+			"service": "Lambda",
+			"providerPlugin": "awscloudformation",
+			"build": true,
+			"dependsOn": [
+				{
+					"category": "storage",
+					"resourceName": "profile",
+					"attributes": [
+						"Name",
+						"Arn"
+					]
+				}
+			]
+		},
+		"apic": {
+			"service": "Lambda",
+			"providerPlugin": "awscloudformation",
+			"build": true,
+			"dependsOn": [
+				{
+					"category": "storage",
+					"resourceName": "users",
+					"attributes": [
+						"Name",
+						"Arn"
+					]
+				}
+			]
+		},
+		"pets": {
+			"service": "Lambda",
+			"providerPlugin": "awscloudformation",
+			"build": true,
+			"dependsOn": [
+				{
+					"category": "storage",
+					"resourceName": "pets",
+					"attributes": [
+						"Name",
+						"Arn"
+					]
+				}
+			]
+		}
+	},
+	"api": {
+		"apia": {
+			"service": "API Gateway",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [
+				{
+					"category": "function",
+					"resourceName": "apia",
+					"attributes": [
+						"Name",
+						"Arn"
+					]
+				}
+			]
+		},
+		"apib": {
+			"service": "API Gateway",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [
+				{
+					"category": "function",
+					"resourceName": "apib",
+					"attributes": [
+						"Name",
+						"Arn"
+					]
+				}
+			]
+		},
+		"apic": {
+			"service": "API Gateway",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [
+				{
+					"category": "function",
+					"resourceName": "apic",
+					"attributes": [
+						"Name",
+						"Arn"
+					]
+				}
+			]
+		},
+		"pets": {
+			"service": "API Gateway",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [
+				{
+					"category": "function",
+					"resourceName": "pets",
+					"attributes": [
+						"Name",
+						"Arn"
+					]
+				}
+			]
+		}
+	}
 }
