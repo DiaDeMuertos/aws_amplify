@@ -1,0 +1,41 @@
+{
+    "paths": [
+        {
+            "name": "/items",
+            "lambdaFunction": "apia",
+            "privacy": {
+                "private": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ]
+            }
+        }
+    ],
+    "resourceName": "apia",
+    "apiName": "apia",
+    "functionArns": [
+        {
+            "lambdaFunction": "apia"
+        }
+    ],
+    "privacy": {
+        "auth": 1,
+        "unauth": 0,
+        "authRoleName": "amplify-awsamplifyenv-develop-220934-authRole",
+        "unAuthRoleName": "amplify-awsamplifyenv-develop-220934-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "apia",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}
