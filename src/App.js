@@ -5,7 +5,8 @@ import faker from 'faker';
 import './App.css';
 class App extends Component {
   componentDidMount() {
-    this.callAPI();
+    // this.callAPI();
+    this.petsAPI();
   }
 
   callAPI = async () => {
@@ -34,6 +35,34 @@ class App extends Component {
 
       const remove = await API.del('apia', `/items/${item.itemId}`);
       console.log('TCL: App -> callAPI -> remove', remove);
+    } catch (err) {
+      console.error({ message: err });
+    }
+  };
+
+  petsAPI = async () => {
+    try {
+      const petCreated = await API.post('pets', '/pets', {
+        body: { petName: faker.commerce.productName(), price: faker.commerce.price() },
+      });
+
+      const pets = await API.get('pets', '/pets', {
+        queryStringParameters: {
+          ProjectionExpression: 'petId, price',
+          FilterExpression: 'petName=:petName',
+          ExpressionAttributeValues: ':petName=Licensed Rubber Fish',
+        },
+      });
+
+      const pet = await API.get('pets', '/pets/99818060-55a4-11ea-adc9-99cc5ec17dab', {
+        queryStringParameters: {
+          ProjectionExpression: 'petId, petName',
+        },
+      });
+
+      console.log('TCL: App -> petsAPI -> CREATE', petCreated);
+      console.log('TCL: App -> petsAPI -> ALL', pets);
+      console.log('TCL: App -> petsAPI -> GET ONE', pet);
     } catch (err) {
       console.error({ message: err });
     }

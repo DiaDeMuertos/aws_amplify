@@ -1,77 +1,28 @@
 {
-  "develop": {
-    "awscloudformation": {
-      "AuthRoleName": "amplify-awsamplifyenv-develop-231707-authRole",
-      "UnauthRoleArn": "arn:aws:iam::473721567013:role/amplify-awsamplifyenv-develop-231707-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::473721567013:role/amplify-awsamplifyenv-develop-231707-authRole",
-      "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-awsamplifyenv-develop-231707-deployment",
-      "UnauthRoleName": "amplify-awsamplifyenv-develop-231707-unauthRole",
-      "StackName": "amplify-awsamplifyenv-develop-231707",
-      "StackId": "arn:aws:cloudformation:us-east-1:473721567013:stack/amplify-awsamplifyenv-develop-231707/f509dd70-553a-11ea-b022-0a279eeb3bc1",
-      "AmplifyAppId": "d10bis2dcaatsz"
-    },
-    "categories": {
-      "auth": {
-        "awsamplifyenv8a48f11a": {}
-      },
-      "function": {
-        "apia": {},
-        "apib": {},
-        "apic": {}
-      }
+    "develop": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-awsamplifyenv-develop-84609-authRole",
+            "UnauthRoleArn": "arn:aws:iam::473721567013:role/amplify-awsamplifyenv-develop-84609-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::473721567013:role/amplify-awsamplifyenv-develop-84609-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "amplify-awsamplifyenv-develop-84609-deployment",
+            "UnauthRoleName": "amplify-awsamplifyenv-develop-84609-unauthRole",
+            "StackName": "amplify-awsamplifyenv-develop-84609",
+            "StackId": "arn:aws:cloudformation:us-east-1:473721567013:stack/amplify-awsamplifyenv-develop-84609/740cdfb0-558a-11ea-a2d1-0ed4cff9b69d",
+            "AmplifyAppId": "d3ie3bnsrrpznp"
+        },
+        "categories": {
+            "auth": {
+                "awsamplifyenv8a48f11a": {}
+            },
+            "function": {
+                "apia": {},
+                "apib": {},
+                "apic": {},
+                "items": {},
+                "profile": {},
+                "users": {}
+            }
+        }
     }
-  },
-  "addstorea": {
-    "awscloudformation": {
-      "AuthRoleName": "amplify-awsamplifyenv-addstorea-234515-authRole",
-      "UnauthRoleArn": "arn:aws:iam::473721567013:role/amplify-awsamplifyenv-addstorea-234515-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::473721567013:role/amplify-awsamplifyenv-addstorea-234515-authRole",
-      "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-awsamplifyenv-addstorea-234515-deployment",
-      "UnauthRoleName": "amplify-awsamplifyenv-addstorea-234515-unauthRole",
-      "StackName": "amplify-awsamplifyenv-addstorea-234515",
-      "StackId": "arn:aws:cloudformation:us-east-1:473721567013:stack/amplify-awsamplifyenv-addstorea-234515/e3358410-553e-11ea-90a2-0a531bfc577e",
-      "AmplifyAppId": "d10bis2dcaatsz"
-    },
-    "categories": {
-      "auth": {
-        "awsamplifyenv8a48f11a": {}
-      },
-      "function": {
-        "apia": {},
-        "apib": {},
-        "apic": {},
-        "items": {},
-        "profile": {},
-        "users": {}
-      }
-    }
-  },
-  "addstoreb": {
-    "awscloudformation": {
-      "AuthRoleName": "amplify-awsamplifyenv-addstoreb-234555-authRole",
-      "UnauthRoleArn": "arn:aws:iam::473721567013:role/amplify-awsamplifyenv-addstoreb-234555-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::473721567013:role/amplify-awsamplifyenv-addstoreb-234555-authRole",
-      "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-awsamplifyenv-addstoreb-234555-deployment",
-      "UnauthRoleName": "amplify-awsamplifyenv-addstoreb-234555-unauthRole",
-      "StackName": "amplify-awsamplifyenv-addstoreb-234555",
-      "StackId": "arn:aws:cloudformation:us-east-1:473721567013:stack/amplify-awsamplifyenv-addstoreb-234555/fb14a930-553e-11ea-8a15-0a803f1342f3",
-      "AmplifyAppId": "d10bis2dcaatsz"
-    },
-    "categories": {
-      "auth": {
-        "awsamplifyenv8a48f11a": {}
-      },
-      "function": {
-        "apia": {},
-        "apib": {},
-        "apic": {},
-        "items": {},
-        "profile": {},
-        "users": {}
-      }
-    }
-  }
 }

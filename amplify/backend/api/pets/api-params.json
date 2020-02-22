@@ -1,0 +1,41 @@
+{
+    "paths": [
+        {
+            "name": "/pets",
+            "lambdaFunction": "pets",
+            "privacy": {
+                "private": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ]
+            }
+        }
+    ],
+    "resourceName": "pets",
+    "apiName": "pets",
+    "functionArns": [
+        {
+            "lambdaFunction": "pets"
+        }
+    ],
+    "privacy": {
+        "auth": 1,
+        "unauth": 0,
+        "authRoleName": "amplify-awsamplifyenv-develop-84609-authRole",
+        "unAuthRoleName": "amplify-awsamplifyenv-develop-84609-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "pets",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}
