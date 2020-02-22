@@ -8,13 +8,32 @@
 		}
 	},
 	"storage": {
-		"profile": {
+    "profile": {
+			"service": "DynamoDB",
+			"providerPlugin": "awscloudformation"
+		},
+		"items": {
 			"service": "DynamoDB",
 			"providerPlugin": "awscloudformation"
 		}
 	},
 	"function": {
-		"apib": {
+		"apia": {
+			"service": "Lambda",
+			"providerPlugin": "awscloudformation",
+			"build": true,
+			"dependsOn": [
+				{
+					"category": "storage",
+					"resourceName": "items",
+					"attributes": [
+						"Name",
+						"Arn"
+					]
+				}
+			]
+		},
+    "apib": {
 			"service": "Lambda",
 			"providerPlugin": "awscloudformation",
 			"build": true,
@@ -31,7 +50,21 @@
 		}
 	},
 	"api": {
-		"apib": {
+		"apia": {
+			"service": "API Gateway",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [
+				{
+					"category": "function",
+					"resourceName": "apia",
+					"attributes": [
+						"Name",
+						"Arn"
+					]
+				}
+			]
+		},
+      "apib": {
 			"service": "API Gateway",
 			"providerPlugin": "awscloudformation",
 			"dependsOn": [
