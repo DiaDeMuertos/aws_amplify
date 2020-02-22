@@ -70,7 +70,7 @@
 				"Runtime": "nodejs10.x",
 				"Timeout": "25",
 				"Code": {
-					"S3Bucket": "amplify-awsamplifyenv-develop-220934-deployment",
+					"S3Bucket": "amplify-awsamplifyenv-develop-231707-deployment",
 					"S3Key": "amplify-builds/apia-675668356633536c4856-build.zip"
 				}
 			}
