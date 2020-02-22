@@ -8,11 +8,15 @@
 		}
 	},
 	"storage": {
-    "profile": {
+		"profile": {
 			"service": "DynamoDB",
 			"providerPlugin": "awscloudformation"
 		},
 		"items": {
+			"service": "DynamoDB",
+			"providerPlugin": "awscloudformation"
+		},
+		"users": {
 			"service": "DynamoDB",
 			"providerPlugin": "awscloudformation"
 		}
@@ -33,7 +37,7 @@
 				}
 			]
 		},
-    "apib": {
+		"apib": {
 			"service": "Lambda",
 			"providerPlugin": "awscloudformation",
 			"build": true,
@@ -41,6 +45,21 @@
 				{
 					"category": "storage",
 					"resourceName": "profile",
+					"attributes": [
+						"Name",
+						"Arn"
+					]
+				}
+			]
+		},
+		"apic": {
+			"service": "Lambda",
+			"providerPlugin": "awscloudformation",
+			"build": true,
+			"dependsOn": [
+				{
+					"category": "storage",
+					"resourceName": "users",
 					"attributes": [
 						"Name",
 						"Arn"
@@ -64,13 +83,27 @@
 				}
 			]
 		},
-      "apib": {
+		"apib": {
 			"service": "API Gateway",
 			"providerPlugin": "awscloudformation",
 			"dependsOn": [
 				{
 					"category": "function",
 					"resourceName": "apib",
+					"attributes": [
+						"Name",
+						"Arn"
+					]
+				}
+			]
+		},
+		"apic": {
+			"service": "API Gateway",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [
+				{
+					"category": "function",
+					"resourceName": "apic",
 					"attributes": [
 						"Name",
 						"Arn"

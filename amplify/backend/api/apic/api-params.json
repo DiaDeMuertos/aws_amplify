@@ -1,0 +1,41 @@
+{
+    "paths": [
+        {
+            "name": "/users",
+            "lambdaFunction": "apic",
+            "privacy": {
+                "private": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ]
+            }
+        }
+    ],
+    "resourceName": "apic",
+    "apiName": "apic",
+    "functionArns": [
+        {
+            "lambdaFunction": "apic"
+        }
+    ],
+    "privacy": {
+        "auth": 1,
+        "unauth": 0,
+        "authRoleName": "amplify-awsamplifyenv-develop-220934-authRole",
+        "unAuthRoleName": "amplify-awsamplifyenv-develop-220934-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "apic",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}
