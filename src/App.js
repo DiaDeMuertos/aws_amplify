@@ -60,9 +60,20 @@ class App extends Component {
         },
       });
 
+      const updated = await API.put('pets', '/pets', {
+        body: {
+          petId: '99818060-55a4-11ea-adc9-99cc5ec17dab',
+          price: faker.commerce.price(),
+        },
+      });
+
+      const deleted = await API.del('pets', '/pets/99818060-55a4-11ea-adc9-99cc5ec17dab');
+
       console.log('TCL: App -> petsAPI -> CREATE', petCreated);
       console.log('TCL: App -> petsAPI -> ALL', pets);
       console.log('TCL: App -> petsAPI -> GET ONE', pet);
+      console.log('TCL: App -> petsAPI -> UPDATE', updated);
+      console.log('TCL: App -> petsAPI -> DELETE', deleted);
     } catch (err) {
       console.error({ message: err });
     }
