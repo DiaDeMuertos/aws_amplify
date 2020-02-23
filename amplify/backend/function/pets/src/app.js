@@ -105,6 +105,50 @@ app.get(path + '/:petId', function(req, res) {
   });
 });
 
+/**
+ * PET UPDATE BY ID
+ */
+app.put(path, function(req, res) {
+  const item = req.body;
+
+  const queryParams = {
+    TableName: tableName,
+    Item: item,
+  };
+
+  dynamodb.put(queryParams, (err, data) => {
+    if (err) {
+      res.statusCode = 500;
+      res.json({ success: false, error: err, body: item });
+    } else {
+      res.json({ success: true, data: item });
+    }
+  });
+});
+
+/**
+ * PET DELETE BY ID
+ */
+app.delete(path + '/:petId', function(req, res) {
+  const { petId } = req.params;
+
+  const queryParams = {
+    TableName: tableName,
+    Key: {
+      petId: petId,
+    },
+  };
+
+  dynamodb.delete(queryParams, (err, data) => {
+    if (err) {
+      res.statusCode = 500;
+      res.json({ success: false, error: err, petId });
+    } else {
+      res.json({ success: true, data: { petId } });
+    }
+  });
+});
+
 app.listen(3000, function() {
   console.log('App started');
 });
